@@ -1,4 +1,7 @@
- <!-- Metric 1 -->
+{% extends "index.html" %}
+{% block content %}
+
+<!-- Metric 1 -->
        <div class="col-sm-2" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
            <div class="chart-wrapper">
                <div class="chart-title">
@@ -30,3 +33,17 @@
            </div>
        </div>
        <!-- Metric 2 -->
+
+        <!-- Oregon donations -->
+        <div class="col-sm-2">
+           <div class="chart-wrapper" data-step="7" data-intro="Total amount donated" style="font-weight: normal" data-position="left">
+               <div class="chart-title">
+                   Total Donations in USD
+               </div>
+               <div class="chart-stage">
+                   <div id="ore-donations-nd"></div>
+               </div>
+           </div>
+        </div>
+
+{% endblock %}

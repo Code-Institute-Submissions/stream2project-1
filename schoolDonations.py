@@ -21,6 +21,10 @@ def index():
 def funding():
     return render_template("timechart.html")
 
+@app.route("/oregon")
+def oregon():
+    return render_template("metric.html")
+
 
 @app.route("/donorsUS/projects")
 def donor_projects():

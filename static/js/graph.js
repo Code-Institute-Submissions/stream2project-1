@@ -45,6 +45,10 @@ function makeGraphs(error, projectsJson) {
        return d["students_reached"]
    })
 
+   var donationsOreDim = ndx.dimension(function (d) {
+       return d["total_donations"];
+   });
+
 
 
    //Calculate metrics
@@ -86,6 +90,7 @@ function makeGraphs(error, projectsJson) {
    var gradeLevelChart = dc.rowChart("#grade-level-row-chart");
    var totalDonationsByGradeChart = dc.pieChart("#total-donations-by-grade-row-chart");
    var totalStudentsReachedND = dc.numberDisplay("#number-students-reached-nd");
+   var oregDonationsND = dc.numberDisplay("#ore-donations-nd");
 
 
    selectField = dc.selectMenu('#menu-select')
@@ -108,7 +113,7 @@ function makeGraphs(error, projectsJson) {
        .group(totalDonations)
        .formatNumber(d3.format(".3s"));
 
- timeChart
+    timeChart
        .width(800)
        .height(200)
        .margins({top: 10, right: 50, bottom: 30, left: 50})
