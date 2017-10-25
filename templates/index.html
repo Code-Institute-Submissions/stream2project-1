@@ -21,23 +21,27 @@
            <button class="btn btn-primary intro-button" type="button" autofocus onclick="javascript:introJs().start();">Start Tour!</button>
        </div>
     </div>
+    <div class="container-fluid">
+           <ul class="nav nav-tabs">
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('funding') }}">Education funding in Oregon</a></li>
+              <li><a href="{{ url_for('comparison') }}">Struggling vs other states</a></li>
+              <li><a href="{{ url_for('reach') }}">Impact on Schools</a></li>
+              <li><a href="{{ url_for('future') }}">What about the future?</a></li>
+           </ul>
+    </div>
     <div  id="outer" class="container">
         {% block content %}
         {% endblock %}
     </div>
-
-
-
-
     <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
-
     <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
-    <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+    <!-- <script src="{{ url_for ('static', filename='js/graph.js')}}"></script> -->
     <script src="{{ url_for ('static', filename='lib/js/intro.js')}}"></script>
 </body>
 </html>

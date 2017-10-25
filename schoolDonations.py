@@ -14,16 +14,24 @@ FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, '
 
 
 @app.route("/")
-def index():
-    return render_template("graphs.html")
+def home():
+    return render_template("home.html")
 
 @app.route("/funding")
 def funding():
-    return render_template("timechart.html")
+    return render_template("funding.html")
 
-@app.route("/oregon")
-def oregon():
-    return render_template("metric.html")
+@app.route("/oregons-vs-average")
+def comparison():
+    return render_template("comparison.html")
+
+@app.route("/students")
+def reach():
+    return render_template("reach.html")
+
+@app.route("/future")
+def future():
+    return render_template("future.html")
 
 
 @app.route("/donorsUS/projects")
