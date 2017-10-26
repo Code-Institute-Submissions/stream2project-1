@@ -41,7 +41,18 @@
     <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
     <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
-    <!-- <script src="{{ url_for ('static', filename='js/graph.js')}}"></script> -->
+    {% if url_name == 'funding' %}
+    <script src="{{ url_for ('static', filename='js/funding.js')}}"></script>
+    {% endif %}
+    {% if url_name  == 'comparison' %}
+    <script src="{{ url_for ('static', filename='js/comparison.js')}}"></script>
+    {% endif %}
+    {% if url_name == 'reach' %}
+    <script src="{{ url_for ('static', filename='js/studentsreached.js')}}"></script>
+    {% endif %}
+    {% if url_name == 'future' %}
+    <script src="{{ url_for ('static', filename='js/future.js')}}"></script>
+    {% endif %}
     <script src="{{ url_for ('static', filename='lib/js/intro.js')}}"></script>
 </body>
 </html>

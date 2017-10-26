@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-   <div class="row">
+<div class="row">
     <div class="col-sm-12">
         <h1>Lagging behind other states</h1>
         <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions</p>
@@ -10,10 +10,37 @@
     <div class="col-sm-6">
         <p>In comparison to the national average Oregon only received XXX donations between XXX and YYYY. This pales in comparison to NEw York where XXX number of donations we made</p>
     </div>
-        <div class="col-sm-6">
-            <p>Insert graph here!</p>
-        </div>
-    </div>
+    <div class="col-sm-2" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of Donations
+               </div>
+               <div class="chart-stage" style=" background: #33CC99;
+                   position: relative;
+                   font-size: 29px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 0px;">
+                   <div id="number-projects-nd-or"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 1 -->
+
+       <!-- Metric 2 -->
+       <div class="col-sm-2">
+           <div class="chart-wrapper" data-step="7" data-intro="Total amount donated" style="font-weight: normal" data-position="left">
+               <div class="chart-title">
+                   Total Donations in USD
+               </div>
+               <div class="chart-stage">
+                   <div id="total-donations-nd-or"></div>
+               </div>
+           </div>
+       </div>
+</div>
 
     <div class="row">
         <div class="col-sm-12">

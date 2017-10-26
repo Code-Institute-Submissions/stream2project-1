@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 {% block content %}
-   <div class="row">
+<div class="row">
     <div class="col-sm-12">
         <h1>Underfunding of eductation in Oregon</h1>
         <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions</p>
@@ -10,15 +10,74 @@
     <div class="col-sm-6">
         <p>Oregon receives significantly less funding than most other US states. A total of XXXX donations were made between XXXX and XXX. This account for XXX donations every year and XXX donations per student in Oregon</p>
     </div>
-        <div class="col-sm-6">
-            <p>Insert graph here!</p>
-        </div>
+         <div class="col-sm-6" data-step="1" data-intro="Number of donations/quarter 2002-2007" style="font-weight: normal" data-position="right">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Number of Donations
+                       </div>
+                       <div class="chart-stage">
+                           <div id="time-chart-or"></div>
+                       </div>
+                   </div>
+               </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-6">
             <p>Call to Action</p>
             <button>Donate</button>
+        </div>
+        <div class=" col-sm-3 chart-wrapper">
+           <div class="chart-title">
+               Total Number of Donations
+           </div>
+           <div class="chart-stage" style=" background: #33CC99;
+               position: relative;
+               font-size: 29px;
+               color: white;
+               vertical-align: middle;
+               text-align: center;
+               padding-top: 12px;
+               padding-bottom: 0px;">
+               <div id="number-projects-nd-or"></div>
+           </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-sm-6">
+        <p>Oregon receives significantly less funding than most other US states. A total of XXXX donations were made between XXXX and XXX. This account for XXX donations every year and XXX donations per student in Oregon</p>
+    </div>
+         <div class="col-sm-6" data-step="1" data-intro="Number of donations/quarter 2002-2007" style="font-weight: normal" data-position="right">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Number of Donations
+                       </div>
+                       <div class="chart-stage">
+                           <div id="time-chart"></div>
+                       </div>
+                   </div>
+               </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Call to Action</p>
+            <button>Donate</button>
+        </div>
+        <div class=" col-sm-3 chart-wrapper">
+           <div class="chart-title">
+               Total Number of Donations
+           </div>
+           <div class="chart-stage" style=" background: #33CC99;
+               position: relative;
+               font-size: 29px;
+               color: white;
+               vertical-align: middle;
+               text-align: center;
+               padding-top: 12px;
+               padding-bottom: 0px;">
+               <div id="number-projects-nd"></div>
+           </div>
         </div>
     </div>
 {% endblock %}

@@ -19,32 +19,47 @@ def home():
 
 @app.route("/funding")
 def funding():
-    return render_template("funding.html")
+    return render_template("funding.html", url_name='funding')
 
 @app.route("/oregons-vs-average")
 def comparison():
-    return render_template("comparison.html")
+    return render_template("comparison.html", url_name='comparison')
 
 @app.route("/students")
 def reach():
-    return render_template("reach.html")
+    return render_template("reach.html", url_name='reach')
 
 @app.route("/future")
 def future():
-    return render_template("future.html")
+    return render_template("future.html", url_name='future')
 
 
-@app.route("/donorsUS/projects")
-def donor_projects():
+@app.route("/donorsUS/ny_projects")
+def ny_projects():
     connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
     collection = connection[DBS_NAME][COLLECTION_NAME]
-    projects = collection.find(projection=FIELDS, limit=55000)
+    projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=100000)
     json_projects = []
     for project in projects:
         json_projects.append(project)
     json_projects = json.dumps(json_projects)
     connection.close()
     return json_projects
+
+@app.route("/donorsUS/or_projects")
+def or_projects():
+    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+        collection = conn[DBS_NAME][COLLECTION_NAME]
+        projects = collection.find({'school_state': 'OR'}, projection=FIELDS, limit=55000)
+        return json.dumps(list(projects))
+
+@app.route("/donorsUS/projects")
+def donor_projects():
+    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+        collection = conn[DBS_NAME][COLLECTION_NAME]
+        projects = collection.find(projection=FIELDS, limit=55000)
+        return json.dumps(list(projects))
+
 
 
 if __name__ == "__main__":

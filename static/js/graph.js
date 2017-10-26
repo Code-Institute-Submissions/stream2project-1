@@ -1,11 +1,11 @@
 queue()
    .defer(d3.json, "/donorsUS/projects")
+   .defer(d3.json, "/donorsUS/ny_projects")
    .await(makeGraphs);
 
-function makeGraphs(error, projectsJson) {
+function makeGraphs(error, donorsUSProjects, ny_projects) {
 
    //Clean projectsJson data
-   var donorsUSProjects = projectsJson;
    var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
    donorsUSProjects.forEach(function (d) {
        d["date_posted"] = dateFormat.parse(d["date_posted"]);
@@ -13,14 +13,29 @@ function makeGraphs(error, projectsJson) {
        d["total_donations"] = +d["total_donations"];
    });
 
+   /*
+   ny_projects.forEach(function (d) {
+       d["date_posted"] = dateFormat.parse(d["date_posted"]);
+       d["date_posted"].setDate(1);
+       d["total_donations"] = +d["total_donations"];
+   });
+   */
+
 
    //Create a Crossfilter instance
    var ndx = crossfilter(donorsUSProjects);
+   // var ndxny = crossfilter(ny_projects);
 
    //Define Dimensions
    var dateDim = ndx.dimension(function (d) {
        return d["date_posted"];
    });
+
+   /*
+   var dateDimNY = ndxny.dimension(function (d) {
+       return d["date_posted"];
+   });
+   */
    var resourceTypeDim = ndx.dimension(function (d) {
        return d["resource_type"];
    });
