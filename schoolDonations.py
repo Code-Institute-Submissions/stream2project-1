@@ -36,21 +36,21 @@ def future():
 
 @app.route("/donorsUS/ny_projects")
 def ny_projects():
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
         projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=55000)
         return json.dumps(list(projects))
 
 @app.route("/donorsUS/or_projects")
 def or_projects():
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
         projects = collection.find({'school_state': 'OR'}, projection=FIELDS, limit=55000)
         return json.dumps(list(projects))
 
 @app.route("/donorsUS/projects")
 def donor_projects():
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
         projects = collection.find(projection=FIELDS, limit=55000)
         return json.dumps(list(projects))
