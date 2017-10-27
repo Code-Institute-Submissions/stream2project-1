@@ -35,7 +35,7 @@ def future():
 
 
 @app.route("/donorsUS/ny_projects")
-def or_projects():
+def ny_projects():
     with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
         projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=55000)
