@@ -5,9 +5,8 @@ import json
 
 app = Flask(__name__)
 
-MONGODB_HOST = '127.0.0.1'
-MONGODB_PORT = 27017
-DBS_NAME = 'donorsUSA'
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, 'grade_level': True, 'students_reached':True, '_id': False}
@@ -35,16 +34,11 @@ def future():
 
 
 @app.route("/donorsUS/ny_projects")
-def ny_projects():
-    connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
-    collection = connection[DBS_NAME][COLLECTION_NAME]
-    projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=100000)
-    json_projects = []
-    for project in projects:
-        json_projects.append(project)
-    json_projects = json.dumps(json_projects)
-    connection.close()
-    return json_projects
+def or_projects():
+    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+        collection = conn[DBS_NAME][COLLECTION_NAME]
+        projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=55000)
+        return json.dumps(list(projects))
 
 @app.route("/donorsUS/or_projects")
 def or_projects():
