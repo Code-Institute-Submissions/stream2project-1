@@ -5,8 +5,8 @@ import json
 
 app = Flask(__name__)
 
-MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
-DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://root:Football2012@ds235785.mlab.com:35785/heroku_lxbrsr0m')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'heroku_lxbrsr0m')
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, 'grade_level': True, 'students_reached':True, '_id': False}
