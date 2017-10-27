@@ -31,7 +31,7 @@ def reach():
 
 @app.route("/future")
 def future():
-    return render_template("future.html", url_name='futurepi')
+    return render_template("future.html", url_name='future')
 
 
 @app.route("/donorsUS/ny_projects")
