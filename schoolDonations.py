@@ -6,8 +6,15 @@ import os
 
 app = Flask(__name__)
 
-MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://root:Football2012@ds235785.mlab.com:35785/heroku_lxbrsr0m')
-DBS_NAME = os.getenv('MONGO_DB_NAME', 'heroku_lxbrsr0m')
+# Local URI mongodb://localhost:27017
+# Local db name donorsUSA
+
+# prod URI mongodb://root:Football2012@ds235785.mlab.com:35785/heroku_lxbrsr0m
+# prod heroku_lxbrsr0m
+
+
+MONGO_URI = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
+DBS_NAME = os.getenv('MONGO_DB_NAME', 'donorsUSA')
 COLLECTION_NAME = 'projects'
 FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, 'poverty_level': True,
           'date_posted': True, 'total_donations': True, 'grade_level': True, 'students_reached':True, '_id': False}
@@ -38,21 +45,21 @@ def future():
 def ny_projects():
     with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
-        projects = collection.find({'school_state': 'NY'}, projection=FIELDS, limit=55000)
+        projects = collection.find({'school_state': 'NY'}, projection=FIELDS)
         return json.dumps(list(projects))
 
 @app.route("/donorsUS/or_projects")
 def or_projects():
     with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
-        projects = collection.find({'school_state': 'OR'}, projection=FIELDS, limit=55000)
+        projects = collection.find({'school_state': 'OR'}, projection=FIELDS)
         return json.dumps(list(projects))
 
 @app.route("/donorsUS/projects")
 def donor_projects():
     with MongoClient(MONGO_URI) as conn:
         collection = conn[DBS_NAME][COLLECTION_NAME]
-        projects = collection.find(projection=FIELDS, limit=55000)
+        projects = collection.find(projection=FIELDS)
         return json.dumps(list(projects))
 
 

@@ -2,15 +2,12 @@
 {% block content %}
 <div class="row">
     <div class="col-sm-12">
-        <h1>Underfunding of eductation in Oregon</h1>
-        <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions</p>
+        <h1>Underfunding of education in Oregon</h1>
+        <p>From birth through the launch of their careers, Oregon students must have the education, tools, and supports necessary to prepare them to succeed in a global economy.</p>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6">
-        <p>Oregon receives significantly less funding than most other US states. A total of XXXX donations were made between XXXX and XXX. This account for XXX donations every year and XXX donations per student in Oregon</p>
-    </div>
-         <div class="col-sm-6" data-step="1" data-intro="Number of donations/quarter 2002-2007" style="font-weight: normal" data-position="right">
+         <div class="col-sm-12" data-step="1" data-intro="Number of donations/quarter 2002-2007" style="font-weight: normal" data-position="right">
                    <div class="chart-wrapper">
                        <div class="chart-title">
                            Number of Donations
@@ -23,61 +20,35 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
-            <p>Call to Action</p>
-            <button>Donate</button>
+        <div class="col-sm-9">
+            <p>Oregon receives significantly less funding than most other US states. Funding for education in California is three times higher and funding in New York is four times higher. Oregon students are falling behind their counterparts in other states as they lack the essential provisions required for a modern 21st century education </p>
+            <p>Crippling underfunding is driving up class sizes and forcing schools to cut corners. A narrow curriculum and a culture of assessment is driving away teachers, creating a recruitment and retention crisis.</p>
         </div>
-        <div class=" col-sm-3 chart-wrapper">
-           <div class="chart-title">
-               Total Number of Donations
-           </div>
-           <div class="chart-stage" style=" background: #33CC99;
-               position: relative;
-               font-size: 29px;
-               color: white;
-               vertical-align: middle;
-               text-align: center;
-               padding-top: 12px;
-               padding-bottom: 0px;">
-               <div id="number-projects-nd-or"></div>
-           </div>
-        </div>
-    </div>
-<div class="row">
-    <div class="col-sm-6">
-        <p>Oregon receives significantly less funding than most other US states. A total of XXXX donations were made between XXXX and XXX. This account for XXX donations every year and XXX donations per student in Oregon</p>
-    </div>
-         <div class="col-sm-6" data-step="1" data-intro="Number of donations/quarter 2002-2007" style="font-weight: normal" data-position="right">
-                   <div class="chart-wrapper">
-                       <div class="chart-title">
-                           Number of Donations
-                       </div>
-                       <div class="chart-stage">
-                           <div id="time-chart"></div>
-                       </div>
-                   </div>
+         <div class="col-sm-3" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Total Number of Donations
                </div>
+               <div class="chart-stage" style=" background: #33CC99;
+                   position: relative;
+                   font-size: 60px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 0px;">
+                   <div id="number-projects-nd-or"></div>
+               </div>
+           </div>
+       </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
-            <p>Call to Action</p>
-            <button>Donate</button>
-        </div>
-        <div class=" col-sm-3 chart-wrapper">
-           <div class="chart-title">
-               Total Number of Donations
-           </div>
-           <div class="chart-stage" style=" background: #33CC99;
-               position: relative;
-               font-size: 29px;
-               color: white;
-               vertical-align: middle;
-               text-align: center;
-               padding-top: 12px;
-               padding-bottom: 0px;">
-               <div id="number-projects-nd"></div>
-           </div>
+        <div class="col-sm-12 cta-bar">
+            <h4 class="pull-right"><a class="cta-text" href="{{ url_for('comparison') }}">Compare Oregon education funding with other US states &gt</a></h4>
         </div>
     </div>
+
+
+
 {% endblock %}

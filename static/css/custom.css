@@ -1,16 +1,6 @@
-#number-projects-nd {
-   font-size: 60px;
+.jumbotron {
+    background-color: #00aef3;
 }
-
-#total-donations-nd {
-   font-size: 60px;
-}
-
-#number-students-reached-nd {
-   font-size: 60px;
-}
-
-
 
 .dc-chart g.row text {
    fill: black;
@@ -78,4 +68,21 @@
 
 .introjs-showElement {
     margin: 2px;
+}
+
+.cta-bar {
+    border-top: 1px solid #428bca;
+    border-bottom: 1px solid #428bca;
+}
+
+.cta-text {
+    font-weight: normal;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+.state-selector {
+    margin-top: 20px;
 }

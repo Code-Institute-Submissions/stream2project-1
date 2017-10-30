@@ -1,5 +1,5 @@
-/*queue()
-   .defer(d3.json, "/donorsUS/ny_projects")
+queue()
+   .defer(d3.json, "/donorsUS/projects")
    .await(makeGraphs);
 
 function makeGraphs(error, projectsJson) {
@@ -25,6 +25,9 @@ function makeGraphs(error, projectsJson) {
    var totalDonationsDim = ndx.dimension(function (d) {
        return d["total_donations"];
    });
+   var stateDim = ndx.dimension(function (d) {
+       return d["school_state"];
+   });
 
 
 
@@ -32,14 +35,11 @@ function makeGraphs(error, projectsJson) {
 
    //Calculate metrics
    var numProjectsByDate = dateDim.group();
-
     var all = ndx.groupAll();
-
-
-
    var totalDonations = ndx.groupAll().reduceSum(function (d) {
        return d["total_donations"];
    });
+   var stateGroup = stateDim.group();
 
 
 
@@ -48,10 +48,12 @@ function makeGraphs(error, projectsJson) {
    var maxDate = dateDim.top(1)[0]["date_posted"];
 
    //Charts
-   var timeChart = dc.barChart("#time-chart");
-
+   var totalDonationsND = dc.numberDisplay("#total-donations-nd");
    var numberProjectsND = dc.numberDisplay("#number-projects-nd");
 
+    selectField = dc.selectMenu('#menu-select')
+    .dimension(stateDim)
+    .group(stateGroup);
 
    numberProjectsND
        .formatNumber(d3.format("d"))
@@ -60,23 +62,19 @@ function makeGraphs(error, projectsJson) {
        })
        .group(all);
 
-    timeChart
-       .width(800)
-       .height(200)
-       .margins({top: 10, right: 50, bottom: 30, left: 50})
-       .dimension(dateDim)
-       .group(numProjectsByDate)
-       .transitionDuration(500)
-       .x(d3.time.scale().domain([minDate, maxDate]))
-       .elasticY(true)
-       .xAxisLabel("Year")
-       .yAxis().ticks(4);
+    totalDonationsND
+       .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(totalDonations)
+       .formatNumber(d3.format(".3s"));
 
 
 
    dc.renderAll();
 }
-*/
+
 queue()
    .defer(d3.json, "/donorsUS/or_projects")
    .await(makeGraphsOr);

@@ -1,51 +1,101 @@
 {% extends "index.html" %}
 {% block content %}
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-9">
         <h1>Lagging behind other states</h1>
-        <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions</p>
+        <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions. Compared with other coastal states considerably fewer donations in terms of number and in total amount. This is why I promise to introduce 2 new schemes that aim to close the funding gap and involve greater cohesion between between community, education and business.</p>
+    </div>
+    <div class="col-sm-2" data-step="5" data-intro="View donations by state" style="font-weight: normal" data-position="right">
+           <div class="chart-wrapper state-selector">
+               <div class="chart-title">
+                   Donation State
+               </div>
+               <div class="chart-stage">
+                   <div id="menu-select"></div>
+               </div>
+           </div>
+       </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+    </div>
+    <div class="col-sm-3">
+        <h3 class="center-block">Oregon</h3>
+    </div>
+    <div class="col-sm-3">
+        <h3 class="center-block">State</h3>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <p>In comparison to the national average Oregon only received XXX donations between XXX and YYYY. This pales in comparison to NEw York where XXX number of donations we made</p>
+        <h4>Total amount donated in USD</h4>
     </div>
-    <div class="col-sm-2" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Total Number of Donations
-               </div>
-               <div class="chart-stage" style=" background: #33CC99;
-                   position: relative;
-                   font-size: 29px;
-                   color: white;
-                   vertical-align: middle;
-                   text-align: center;
-                   padding-top: 12px;
-                   padding-bottom: 0px;">
-                   <div id="number-projects-nd-or"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Metric 1 -->
-
-       <!-- Metric 2 -->
-       <div class="col-sm-2">
+    <div class="col-sm-3">
            <div class="chart-wrapper" data-step="7" data-intro="Total amount donated" style="font-weight: normal" data-position="left">
                <div class="chart-title">
                    Total Donations in USD
                </div>
-               <div class="chart-stage">
+               <div class="chart-stage" style="background: #ff6666; font-size: 60px;">
                    <div id="total-donations-nd-or"></div>
                </div>
            </div>
        </div>
+    <div class="col-sm-3">
+       <div class="chart-wrapper" data-step="7" data-intro="Total amount donated" style="font-weight: normal" data-position="left">
+           <div class="chart-title">
+               Total Donations in USD
+           </div>
+           <div class="chart-stage" style="background: #33CC99; font-size: 60px;">
+               <div id="total-donations-nd"></div>
+           </div>
+       </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h4>Total number of donations</h4>
+    </div>
+    <div class="col-sm-3" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
+       <div class="chart-wrapper">
+           <div class="chart-title">
+               Total Number of Donations
+           </div>
+           <div class="chart-stage" style=" background: #ff6666;
+               position: relative;
+               font-size: 60px;
+               color: white;
+               vertical-align: middle;
+               text-align: center;
+               padding-top: 12px;
+               padding-bottom: 0px;">
+               <div id="number-projects-nd-or"></div>
+           </div>
+       </div>
+    </div>
+    <div class="col-sm-3" data-step="6" data-intro="Total number of donations" style="font-weight: normal" data-position="right">
+       <div class="chart-wrapper">
+           <div class="chart-title">
+               Total Number of Donations
+           </div>
+           <div class="chart-stage" style=" background: #33CC99;
+               position: relative;
+               font-size: 60px;
+               color: white;
+               vertical-align: middle;
+               text-align: center;
+               padding-top: 12px;
+               padding-bottom: 0px;">
+               <div id="number-projects-nd"></div>
+           </div>
+       </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 cta-bar">
+        <h4 class="pull-right">
+            <a class="cta-text" href="{{ url_for('reach') }}">Money is not reaching our children &gt</a>
+        </h4>
+    </div>
 </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <p>Call to Action</p>
-            <button>Donate</button>
-        </div>
-    </div>
 {% endblock %}

@@ -1,59 +1,65 @@
 {% extends "index.html" %}
 {% block content %}
-   <div class="row">
-    <div class="col-sm-12">
+<div class="row">
+    <div class="col-sm-9">
         <h1>Money is not reaching our students</h1>
-        <p>Oregon is one of the poorest performing states in the US in terms of total donations made to educational institutions</p>
+        <p>When it fails, it isn’t just the individual that is held back, but all of us. When we invest in people to develop their skills and capabilities, we all benefit from a stronger economy and society.</p>
+        <p>I will drive up standards across the board, learning from examples of best practice to encourage co-operation and strong leadership across schools. We trust in teachers and support staff professionalism to refocus their workload on what happens in the classroom</p>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <p>In comparison to the national average Oregon only received XXX donations between XXX and YYYY. This pales in comparison to NEw York where XXX number of donations we made</p>
-    </div>
-        <!-- Students Reached -->
-       <div class="col-sm-3" data-step="10" data-intro="Number of students reached" style="font-weight: normal" data-position="right">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Number of students reached (OR)
+        <div class="row">
+            <div class="col-sm-3"></div>
+                <div class="col-sm-6" data-step="10" data-intro="Number of students reached" style="font-weight: normal" data-position="right">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           <strong>Number of students reached - Oregon</strong>
+                       </div>
+                       <div class="chart-stage" style=" background: #33CC99;
+                           position: relative;
+                           font-size: 60px;
+                           color: white;
+                           vertical-align: middle;
+                           text-align: center;
+                           padding-top: 12px;
+                           padding-bottom: 0px;">
+                           <div id="number-students-reached-nd-or"></div>
+                       </div>
+                   </div>
                </div>
-               <div class="chart-stage" style=" background: #33CC99;
-                   position: relative;
-                   font-size: 29px;
-                   color: white;
-                   vertical-align: middle;
-                   text-align: center;
-                   padding-top: 12px;
-                   padding-bottom: 0px;">
-                   <div id="number-students-reached-nd-or"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Students Reached -->
-        <!-- Students Reached -->
-       <div class="col-sm-3" data-step="10" data-intro="Number of students reached" style="font-weight: normal" data-position="right">
-           <div class="chart-wrapper">
-               <div class="chart-title">
-                   Number of students reached (NY)
-               </div>
-               <div class="chart-stage" style=" background: #33CC99;
-                   position: relative;
-                   font-size: 29px;
-                   color: white;
-                   vertical-align: middle;
-                   text-align: center;
-                   padding-top: 12px;
-                   padding-bottom: 0px;">
-                   <div id="number-students-reached-nd-ny"></div>
-               </div>
-           </div>
-       </div>
-       <!-- Students Reached -->
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12">
-            <p>Call to Action</p>
-            <button>Donate</button>
+            <div class="col-sm-3"></div>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" data-step="10" data-intro="Number of students reached" style="font-weight: normal" data-position="right">
+               <div class="chart-wrapper">
+                   <div class="chart-title">
+                       <strong>Number of students reached - New York</strong>
+                   </div>
+                   <div class="chart-stage" style=" background: #33CC99;
+                       position: relative;
+                       font-size: 80px;
+                       color: white;
+                       vertical-align: middle;
+                       text-align: center;
+                       padding-top: 12px;
+                       padding-bottom: 0px;">
+                       <div id="number-students-reached-nd-ny"></div>
+                   </div>
+               </div>
+           </div>
+            <div class="col-sm-2"></div>
+           <!-- Students Reached -->
+        </div>
+    </div>
+</div>
+<!-- CTA -->
+<div class="row">
+    <div class="col-sm-12 cta-bar">
+        <h4 class="pull-right"><a class="cta-text" href="{{ url_for('comparison') }}">Help give Oregon students a better future &gt</a></h4>
+    </div>
+</div>
 {% endblock %}
