@@ -17,6 +17,7 @@
            <div class="navbar-header">
                <a class="navbar-brand" href="/">Darren Francis: Your Senator for Oregon</a>
            </div>
+           <button class="btn btn-primary intro-button" type="button" autofocus onclick="javascript:introJs().start();">Help</button>
        </div>
     </div>
     <div class="container-fluid">
@@ -51,7 +52,7 @@
     {% if url_name == 'future' %}
     <script src="{{ url_for ('static', filename='js/future.js')}}"></script>
     {% endif %}
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
     <script src="{{ url_for ('static', filename='lib/js/intro.js')}}"></script>
 </body>
 </html>
